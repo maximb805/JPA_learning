@@ -1,0 +1,31 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+             http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+             version="2.0">
+
+    <persistence-unit name="HelloHibernatePU"> <!--1-->
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider> <!--2-->
+        <properties>
+            <!--3-->
+            <property name="jakarta.persistence.jdbc.driver"
+                      value="org.postgresql.Driver"/>
+            <!--4-->
+            <property name="jakarta.persistence.jdbc.url"
+                      value="jdbc:postgresql://localhost:5432/hello_hibernate"/>
+            <!--5-->
+            <property name="jakarta.persistence.jdbc.user" value="postgres"/>
+            <!--6-->
+            <property name="jakarta.persistence.jdbc.password" value="postgres"/>
+            <!--7-->
+            <property name="hibernate.dialect"
+                      value="org.hibernate.dialect.PostgreSQLDialect"/>
+            <!--8-->
+            <property name="hibernate.show_sql" value="true"/>
+            <!--9-->
+            <property name="hibernate.format_sql" value="true"/>
+            <!--10-->
+            <property name="hibernate.hbm2ddl.auto" value="create"/>
+        </properties>
+    </persistence-unit>
+</persistence>
